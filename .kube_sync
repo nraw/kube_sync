@@ -1,3 +1,2 @@
-pod=app-57c6b5c8c5-v2kqm
-pod_dir="/code"
+pod_dir="/tmp"
 # current_path=$(pwd)
