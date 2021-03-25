@@ -5,7 +5,18 @@ pod_dir='/'
 pod=''
 namespace=""
 
-. ./.kube_sync
+if [ -f .kube_sync ]; then 
+  . ./.kube_sync
+else
+  echo 'pod_dir:'
+  read pod_dir
+  echo "pod_dir=\"$pod_dir\"\n" >> .kube_sync
+  echo 'namespace:'
+  read namespace
+  echo "namespace=\"$namespace\"\n" >> .kube_sync
+
+
+fi
 
 new_file=$1
 new_path=${new_file#$current_path/}
